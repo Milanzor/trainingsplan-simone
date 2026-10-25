@@ -26,7 +26,7 @@ root folder (`.nojekyll`, no build step).
   "vandaag": {                                 // or null
     "datum": "2026-10-26", "titel": "Rustige duurloop 30 min", "type": "easy",
     "beschrijving": "Rustig tempo, je moet kunnen praten.", "doel": "Basis opbouwen",
-    "status": "gepland"
+    "status": "gepland", "in_garmin": true   // in_garmin optional
   },
   "vooruitblik": [ { "wanneer": "Morgen", "titel": "Rust of wandelen", "type": "rust" } ],
   "logboek": [                                 // every day with a prescription; newest last or first
@@ -46,8 +46,11 @@ root folder (`.nojekyll`, no build step).
 
 - **Dutch, written for Simone**: short, friendly, no jargon (no "Z2", "LTHR", "ACWR").
   Describe effort in plain words ("rustig, je kunt praten").
-- **Garmin:** when today's session has been scheduled in her Garmin, `vandaag.beschrijving`
-  says so ("Deze training staat in je Garmin."). Leave it out on rest days or if the push failed.
+- **Garmin:** set `vandaag.in_garmin: true` only when today's session is actually scheduled in
+  her Garmin; the page then shows a "Staat in je Garmin" badge. Omit it on rest days or if the push failed.
+- **Keep it short.** Titles ≤ ~40 characters, `beschrijving` one or two short sentences,
+  `vooruitblik.titel` a few words. The page shows only the current phase's `omschrijving`;
+  `doel.toelichting`, `vandaag.doel` and `logboek.notitie` are kept in the data but not shown.
 - **Training data only.** Never publish HRV, resting heart rate, sleep, readiness, Body
   Battery, weight, illness/injury details, or her surname. A reason like "na een drukke
   week rustig aan" is fine; "HRV laag" is not.

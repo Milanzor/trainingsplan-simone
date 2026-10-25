@@ -3,74 +3,102 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
 <title>Trainingsplan Simone</title>
 <meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #f6f5f2; --card: #ffffff; --text: #1d1d1b; --muted: #6b6a66; --line: #e4e2dc;
-    --accent: #d9480f; --accent-soft: #fde8dc; --done: #2b8a3e; --skip: #a8a49b;
-    --easy: #2f9e44; --quality: #d9480f; --long: #1c7ed6; --rest: #868e96; --other: #7048e8;
-  }
-  @media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) {
-      --bg: #151514; --card: #1f1f1d; --text: #ecebe7; --muted: #a09e98; --line: #33322f;
-      --accent: #ff8a4c; --accent-soft: #3a2418; --done: #51cf66; --skip: #6b6a66;
-      --easy: #51cf66; --quality: #ff8a4c; --long: #4dabf7; --rest: #adb5bd; --other: #9775fa;
-    }
-  }
-  :root[data-theme="dark"] {
-    --bg: #151514; --card: #1f1f1d; --text: #ecebe7; --muted: #a09e98; --line: #33322f;
-    --accent: #ff8a4c; --accent-soft: #3a2418; --done: #51cf66; --skip: #6b6a66;
-    --easy: #51cf66; --quality: #ff8a4c; --long: #4dabf7; --rest: #adb5bd; --other: #9775fa;
+    --bg: #fdf7f6; --card: #ffffff; --text: #3b2a33; --muted: #94808a; --line: #f3e4e8;
+    --accent: #d4668a; --accent-deep: #b24d72; --accent-soft: #fce8ee; --blush: #fff1f4; --lilac: #f3ecfb;
+    --shadow: 0 1px 2px rgba(178, 77, 114, .06), 0 8px 24px rgba(178, 77, 114, .08);
+    --easy: #e07fa0; --quality: #a65fa0; --long: #8c8ad8; --rest: #c9b6be; --other: #e59a7a;
   }
   * { box-sizing: border-box; }
-  body { margin: 0; background: var(--bg); color: var(--text);
-    font: 16px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
-  main { max-width: 760px; margin: 0 auto; padding: 24px 16px 48px; }
-  header h1 { margin: 0; font-size: 1.75rem; letter-spacing: -0.01em; }
-  header p { margin: 4px 0 0; color: var(--muted); font-size: 0.9rem; }
-  section { background: var(--card); border: 1px solid var(--line); border-radius: 14px;
-    padding: 18px; margin-top: 16px; }
-  h2 { margin: 0 0 12px; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em;
-    color: var(--muted); font-weight: 600; }
-  .today-title { font-size: 1.4rem; font-weight: 700; margin: 0; }
-  .today-desc { margin: 6px 0 0; }
-  .today-goal { margin: 8px 0 0; color: var(--muted); font-size: 0.95rem; }
-  .tag { display: inline-block; font-size: 0.75rem; font-weight: 600; padding: 2px 8px;
-    border-radius: 999px; color: #fff; background: var(--tag, var(--other)); vertical-align: middle; }
-  .status { font-size: 0.8rem; color: var(--muted); margin-left: 6px; }
-  .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px; }
-  .stat { border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; }
-  .stat b { display: block; font-size: 1.4rem; }
-  .stat span { color: var(--muted); font-size: 0.85rem; }
-  .bar-track { height: 8px; background: var(--line); border-radius: 4px; margin-top: 6px; overflow: hidden; }
-  .bar-fill { height: 100%; background: var(--accent); }
-  ul.outlook { list-style: none; margin: 0; padding: 0; }
-  ul.outlook li { display: flex; gap: 10px; align-items: baseline; padding: 8px 0;
-    border-top: 1px solid var(--line); }
-  ul.outlook li:first-child { border-top: 0; }
-  .when { min-width: 90px; color: var(--muted); font-size: 0.9rem; }
+  body { margin: 0; color: var(--text);
+    background: radial-gradient(1200px 500px at 85% -10%, var(--lilac), transparent 60%),
+                radial-gradient(900px 500px at -10% 0%, var(--blush), transparent 60%), var(--bg);
+    font: 16px/1.55 "DM Sans", system-ui, -apple-system, "Segoe UI", sans-serif; min-height: 100vh; }
+  main { max-width: 720px; margin: 0 auto; padding: 36px 16px 56px; }
+  .serif { font-family: Fraunces, Georgia, serif; }
+
+  header { text-align: center; margin-bottom: 26px; }
+  .eyebrow { margin: 0; font-size: .78rem; letter-spacing: .16em; text-transform: uppercase; color: var(--accent); font-weight: 600; }
+  header h1 { margin: 4px 0 2px; font: 600 2.9rem/1.05 Fraunces, Georgia, serif; letter-spacing: -.02em; }
+  header h1 em { font-weight: 400; color: var(--accent); }
+  .goal { margin: 6px 0 0; color: var(--muted); font-size: .95rem; }
+  .countdown { display: inline-flex; align-items: baseline; gap: 6px; margin-top: 14px; padding: 6px 16px;
+    border-radius: 999px; background: var(--card); box-shadow: var(--shadow); font-size: .88rem; color: var(--muted); }
+  .countdown b { font: 600 1.25rem Fraunces, Georgia, serif; color: var(--accent-deep); }
+
+  section { background: var(--card); border-radius: 22px; padding: 22px; margin-top: 18px; box-shadow: var(--shadow); }
+  h2 { margin: 0 0 14px; font: 500 1.15rem Fraunces, Georgia, serif; color: var(--text); }
+  h2::before { content: "✿"; color: var(--accent); font-size: .85em; margin-right: 8px; }
+
+  .today { background: linear-gradient(135deg, #fff 0%, var(--blush) 55%, var(--lilac) 100%); position: relative; overflow: hidden; }
+  .today::after { content: ""; position: absolute; right: -60px; top: -60px; width: 200px; height: 200px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(212,102,138,.14), transparent 70%); }
+  .today-date { margin: 0; font-size: .8rem; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); font-weight: 600; }
+  .today-title { margin: 6px 0 0; font: 600 1.6rem/1.2 Fraunces, Georgia, serif; }
+  .today-desc { margin: 10px 0 0; max-width: 52ch; }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+  .chip { display: inline-flex; align-items: center; gap: 6px; font-size: .8rem; font-weight: 500; padding: 4px 12px;
+    border-radius: 999px; background: rgba(255,255,255,.85); border: 1px solid var(--line); color: var(--text); }
+  .chip.garmin { background: var(--accent); border-color: var(--accent); color: #fff; }
+  .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--tag, var(--other)); flex: none; }
+
+  ul.days { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; }
+  ul.days li { padding: 12px 14px; border-radius: 16px; background: var(--bg); border: 1px solid var(--line); }
+  ul.days .when { display: block; font-size: .75rem; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin-bottom: 4px; }
+  ul.days .what { display: flex; gap: 8px; align-items: baseline; font-size: .95rem; }
+  ul.days .what .dot { transform: translateY(-1px); }
+
+  .phasebar { display: flex; gap: 4px; margin: 4px 0 12px; }
+  .phasebar span { flex: var(--w); height: 8px; border-radius: 999px; background: var(--line); }
+  .phasebar span.done { background: var(--accent-soft); }
+  .phasebar span.now { background: linear-gradient(90deg, var(--accent), #e9a0bb); }
+  .phase-now { margin: 0; font-weight: 600; }
+  .phase-now small { font-weight: 400; color: var(--muted); margin-left: 6px; white-space: nowrap; }
+  .phase-desc { margin: 4px 0 0; color: var(--muted); font-size: .93rem; }
+
+  .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+  .stat { text-align: center; padding: 12px 8px; border-radius: 16px; background: var(--bg); }
+  .stat b { display: block; font: 600 1.5rem Fraunces, Georgia, serif; color: var(--accent-deep); }
+  .stat span { color: var(--muted); font-size: .8rem; line-height: 1.3; display: block; }
+  .chart { margin-top: 16px; }
   .chart svg { width: 100%; height: auto; display: block; }
-  .chart text { fill: var(--muted); font-size: 11px; }
-  .log { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
-  .log th, .log td { text-align: left; padding: 7px 6px; border-top: 1px solid var(--line); vertical-align: top; }
-  .log th { color: var(--muted); font-weight: 600; border-top: 0; }
-  .log td.num { white-space: nowrap; }
-  .log tr.skipped td { color: var(--skip); }
-  .note { color: var(--muted); font-size: 0.85rem; }
+  .chart text { fill: var(--muted); font-size: 11px; font-family: "DM Sans", sans-serif; }
+
+  ul.log { list-style: none; margin: 0; padding: 0; }
+  ul.log li { display: flex; gap: 12px; align-items: baseline; padding: 10px 0; border-top: 1px solid var(--line); }
+  ul.log li:first-child { border-top: 0; padding-top: 0; }
+  ul.log .d { min-width: 74px; color: var(--muted); font-size: .85rem; }
+  ul.log .t { flex: 1; }
+  ul.log .m { color: var(--muted); font-size: .85rem; white-space: nowrap; }
+  ul.log li.skipped { color: var(--muted); text-decoration: line-through; text-decoration-color: var(--rest); }
+  .badge { font-size: .72rem; color: var(--accent-deep); background: var(--accent-soft); padding: 1px 8px; border-radius: 999px; margin-left: 6px; }
   .empty { color: var(--muted); margin: 0; }
-  @media (max-width: 520px) { .log .hide-sm { display: none; } }
+  footer { text-align: center; color: var(--muted); font-size: .78rem; margin-top: 26px; }
+
+  @media (max-width: 520px) {
+    header h1 { font-size: 2.3rem; }
+    .today-title { font-size: 1.35rem; }
+    section { padding: 18px; border-radius: 18px; }
+  }
 </style>
 </head>
 <body>
 <main>
   <header>
-    <h1>Trainingsplan Simone</h1>
-    <p id="updated">Laden…</p>
+    <p class="eyebrow">Trainingsplan</p>
+    <h1>Simone <em>loopt</em></h1>
+    <p class="goal" id="goal"></p>
+    <div id="countdown"></div>
   </header>
 
-  <section>
-    <h2>Vandaag</h2>
+  <section class="today">
     <div id="today"><p class="empty">Laden…</p></div>
   </section>
 
@@ -80,35 +108,32 @@
   </section>
 
   <section>
-    <h2>Doel</h2>
-    <div id="goal"></div>
-  </section>
-
-  <section>
-    <h2>Opbouw naar de race</h2>
+    <h2>Opbouw</h2>
     <div id="phases"></div>
   </section>
 
   <section>
     <h2>Voortgang</h2>
     <div class="stats" id="stats"></div>
-    <div class="chart" id="chart" style="margin-top:16px"></div>
+    <div class="chart" id="chart"></div>
   </section>
 
   <section>
     <h2>Logboek</h2>
     <div id="log"></div>
   </section>
+
+  <footer id="updated"></footer>
 </main>
 
 <script>
 const TYPES = {
-  easy:     { label: 'Rustig',    color: 'var(--easy)' },
-  kwaliteit:{ label: 'Kwaliteit', color: 'var(--quality)' },
-  lang:     { label: 'Lange duur',color: 'var(--long)' },
-  rust:     { label: 'Rust',      color: 'var(--rest)' },
-  kracht:   { label: 'Kracht',    color: 'var(--other)' },
-  anders:   { label: 'Anders',    color: 'var(--other)' },
+  easy:     { label: 'Rustig',     color: 'var(--easy)' },
+  kwaliteit:{ label: 'Pittig',     color: 'var(--quality)' },
+  lang:     { label: 'Lang',       color: 'var(--long)' },
+  rust:     { label: 'Rust',       color: 'var(--rest)' },
+  kracht:   { label: 'Kracht',     color: 'var(--other)' },
+  anders:   { label: 'Anders',     color: 'var(--other)' },
 };
 const STATUS = { gepland: 'gepland', gedaan: 'gedaan ✓', overgeslagen: 'overgeslagen', geschrapt: 'geschrapt' };
 
@@ -120,7 +145,8 @@ const el = (tag, attrs = {}, ...kids) => {
   for (const k of kids) if (k != null) n.append(k);
   return n;
 };
-const tag = t => { const ty = TYPES[t] || TYPES.anders; return el('span', { class: 'tag', style: `--tag:${ty.color}` }, ty.label); };
+const dot = t => el('span', { class: 'dot', style: `--tag:${(TYPES[t] || TYPES.anders).color}` });
+const typeChip = t => el('span', { class: 'chip' }, dot(t), (TYPES[t] || TYPES.anders).label);
 const parseDate = s => { const [y, m, d] = s.split('-').map(Number); return new Date(y, m - 1, d); };
 const fmtDate = (s, opts = { weekday: 'short', day: 'numeric', month: 'short' }) =>
   parseDate(s).toLocaleDateString('nl-NL', opts);
@@ -129,55 +155,57 @@ const mondayOf = d => { const x = new Date(d); x.setHours(0,0,0,0); x.setDate(x.
 const iso = d => `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
 
 function render(data) {
+  const todayIso = iso(new Date());
   const upd = data.bijgewerkt ? new Date(data.bijgewerkt) : null;
   document.getElementById('updated').textContent = upd
     ? 'Bijgewerkt ' + upd.toLocaleString('nl-NL', { weekday: 'long', day: 'numeric', month: 'long', hour: '2-digit', minute: '2-digit' })
     : '';
+
+  // Doel + aftellen
+  document.getElementById('goal').textContent = data.doel?.titel || '';
+  const days = data.racedatum ? Math.ceil((parseDate(data.racedatum) - parseDate(todayIso)) / 86400000) : null;
+  document.getElementById('countdown').replaceChildren(days != null && days >= 0
+    ? el('span', { class: 'countdown' }, el('b', {}, String(days)), days === 1 ? 'dag te gaan' : 'dagen te gaan') : '');
 
   // Vandaag
   const t = data.vandaag, today = document.getElementById('today');
   today.replaceChildren();
   if (t && t.titel) {
     today.append(
-      el('p', { class: 'note' }, fmtDate(t.datum, { weekday: 'long', day: 'numeric', month: 'long' })),
-      el('p', { class: 'today-title' }, t.titel, ' ', tag(t.type), el('span', { class: 'status' }, STATUS[t.status] || t.status || '')),
+      el('p', { class: 'today-date' }, 'Vandaag · ' + fmtDate(t.datum, { weekday: 'long', day: 'numeric', month: 'long' })),
+      el('p', { class: 'today-title' }, t.titel),
       t.beschrijving ? el('p', { class: 'today-desc' }, t.beschrijving) : null,
-      t.doel ? el('p', { class: 'today-goal' }, 'Waarom: ' + t.doel) : null,
+      el('div', { class: 'chips' },
+        typeChip(t.type),
+        t.in_garmin ? el('span', { class: 'chip garmin' }, '⌚ Staat in je Garmin') : null,
+        t.status && t.status !== 'gepland' ? el('span', { class: 'chip' }, STATUS[t.status] || t.status) : null),
     );
   } else {
-    today.append(el('p', { class: 'empty' }, data.melding || 'Nog geen training voor vandaag.'));
+    today.append(el('p', { class: 'today-date' }, 'Vandaag'),
+      el('p', { class: 'today-title' }, data.melding || 'Nog geen training'));
   }
 
   // Komende dagen
   const out = document.getElementById('outlook');
-  out.replaceChildren();
-  if (data.vooruitblik?.length) {
-    out.append(el('ul', { class: 'outlook' }, ...data.vooruitblik.map(v =>
-      el('li', {}, el('span', { class: 'when' }, v.wanneer), el('span', {}, v.titel, ' ', tag(v.type))))));
-    out.append(el('p', { class: 'note', style: 'margin:10px 0 0' }, 'Een vooruitblik, geen vast schema: elke ochtend wordt de training van die dag bepaald op basis van herstel en de afgelopen dagen.'));
-  } else out.append(el('p', { class: 'empty' }, 'Nog geen vooruitblik.'));
+  out.replaceChildren(data.vooruitblik?.length
+    ? el('ul', { class: 'days' }, ...data.vooruitblik.map(v =>
+        el('li', {}, el('span', { class: 'when' }, v.wanneer), el('span', { class: 'what' }, dot(v.type), v.titel))))
+    : el('p', { class: 'empty' }, 'Nog geen vooruitblik.'));
 
-  // Doel
-  const g = document.getElementById('goal');
-  g.replaceChildren(
-    el('p', { style: 'margin:0;font-weight:600' }, data.doel?.titel || 'Nog niet vastgesteld'),
-    data.doel?.toelichting ? el('p', { class: 'note', style: 'margin:4px 0 0' }, data.doel.toelichting) : null,
-  );
-
-  // Opbouw (fases)
+  // Opbouw: balk met fases, alleen de huidige uitgeschreven
   const ph = document.getElementById('phases');
   ph.replaceChildren();
   if (data.fases?.length) {
-    const todayIso = iso(new Date());
-    const race = data.racedatum ? Math.ceil((parseDate(data.racedatum) - parseDate(todayIso)) / 86400000) : null;
-    if (race != null && race >= 0) ph.append(el('p', { style: 'margin:0 0 10px;font-weight:600' }, `Nog ${race} dagen tot de race`));
-    ph.append(el('ul', { class: 'outlook' }, ...data.fases.map(f => {
-      const now = todayIso >= f.van && todayIso <= f.tot;
-      return el('li', {},
-        el('span', { class: 'when' }, `${fmtDate(f.van, { day: 'numeric', month: 'short' })} – ${fmtDate(f.tot, { day: 'numeric', month: 'short' })}`),
-        el('span', {}, el('b', {}, f.naam), now ? el('span', { class: 'tag', style: 'margin-left:6px;--tag:var(--accent)' }, 'nu') : null,
-          el('div', { class: 'note' }, f.omschrijving)));
-    })));
+    const len = f => (parseDate(f.tot) - parseDate(f.van)) / 86400000 + 1;
+    const cur = data.fases.find(f => todayIso >= f.van && todayIso <= f.tot)
+      || (todayIso < data.fases[0].van ? data.fases[0] : null);
+    ph.append(el('div', { class: 'phasebar' }, ...data.fases.map(f => el('span', {
+      class: f === cur ? 'now' : (f.tot < todayIso ? 'done' : ''), style: `--w:${len(f)}`, title: f.naam }))));
+    if (cur) {
+      const range = `${fmtDate(cur.van, { day: 'numeric', month: 'short' })} – ${fmtDate(cur.tot, { day: 'numeric', month: 'short' })}`;
+      ph.append(el('p', { class: 'phase-now' }, cur.naam, el('small', {}, range)),
+        cur.omschrijving ? el('p', { class: 'phase-desc' }, cur.omschrijving) : null);
+    }
   } else ph.append(el('p', { class: 'empty' }, 'Nog niet vastgesteld.'));
 
   // Voortgang
@@ -185,20 +213,18 @@ function render(data) {
   const now = new Date(), wk = mondayOf(now);
   const inWeek = runs.filter(r => parseDate(r.datum) >= wk);
   const weekKm = inWeek.reduce((a, r) => a + r.afstand_km, 0);
-  const monthStart = new Date(now.getFullYear(), now.getMonth(), 1);
-  const monthKm = runs.filter(r => parseDate(r.datum) >= monthStart).reduce((a, r) => a + r.afstand_km, 0);
   const totalKm = runs.reduce((a, r) => a + r.afstand_km, 0);
-  const goalRuns = data.weekdoel?.runs, goalKm = data.weekdoel?.km;
-  const stat = (big, small, frac) => el('div', { class: 'stat' }, el('b', {}, big), el('span', {}, small),
-    frac != null ? el('div', { class: 'bar-track' }, el('div', { class: 'bar-fill', style: `width:${Math.min(100, Math.round(frac * 100))}%` })) : null);
+  const goalRuns = data.weekdoel?.runs;
+  const stat = (big, small) => el('div', { class: 'stat' }, el('b', {}, big), el('span', {}, small));
   document.getElementById('stats').replaceChildren(
-    stat(goalRuns ? `${inWeek.length} / ${goalRuns}` : String(inWeek.length), 'runs deze week', goalRuns ? inWeek.length / goalRuns : null),
-    stat(goalKm ? `${km(weekKm)} / ${goalKm} km` : `${km(weekKm)} km`, 'deze week', goalKm ? weekKm / goalKm : null),
-    stat(`${km(monthKm)} km`, now.toLocaleDateString('nl-NL', { month: 'long' })),
-    stat(`${km(totalKm)} km`, `totaal (${runs.length} runs)`),
+    stat(goalRuns ? `${inWeek.length}/${goalRuns}` : String(inWeek.length), 'runs deze week'),
+    stat(km(weekKm), 'km deze week'),
+    stat(km(totalKm), 'km totaal'),
   );
 
-  // Weekgrafiek: laatste 10 weken
+  // Weekgrafiek: laatste 10 weken (pas zodra er kilometers zijn)
+  if (!runs.length) document.getElementById('chart').replaceChildren();
+  else {
   const weeks = [];
   for (let i = 9; i >= 0; i--) { const s = new Date(wk); s.setDate(s.getDate() - 7 * i); weeks.push({ start: s, km: 0 }); }
   for (const r of runs) {
@@ -206,42 +232,39 @@ function render(data) {
     const w = weeks.find(w => iso(w.start) === m); if (w) w.km += r.afstand_km;
   }
   const max = Math.max(10, ...weeks.map(w => w.km));
-  const W = 600, H = 170, pad = 22, bw = (W - 20) / weeks.length;
+  const W = 600, H = 150, pad = 22, bw = (W - 20) / weeks.length;
   const ns = 'http://www.w3.org/2000/svg';
   const svg = document.createElementNS(ns, 'svg'); svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
   svg.setAttribute('role', 'img'); svg.setAttribute('aria-label', 'Kilometers per week, laatste 10 weken');
   weeks.forEach((w, i) => {
-    const h = (w.km / max) * (H - pad * 2), x = 10 + i * bw + bw * 0.18, y = H - pad - h;
+    const h = (w.km / max) * (H - pad * 2), x = 10 + i * bw + bw * 0.2, y = H - pad - h;
     const r = document.createElementNS(ns, 'rect');
-    Object.entries({ x, y, width: bw * 0.64, height: Math.max(h, 1), rx: 4,
-      fill: i === weeks.length - 1 ? 'var(--accent)' : 'var(--line)' }).forEach(([k, v]) => r.setAttribute(k, v));
+    Object.entries({ x, y, width: bw * 0.6, height: Math.max(h, 3), rx: 6,
+      fill: i === weeks.length - 1 ? 'var(--accent)' : (w.km > 0 ? '#efc3d2' : 'var(--line)') }).forEach(([k, v]) => r.setAttribute(k, v));
     const tt = document.createElementNS(ns, 'title'); tt.textContent = `week van ${w.start.toLocaleDateString('nl-NL')}: ${km(w.km)} km`; r.append(tt);
     svg.append(r);
-    const lab = (txt, ty) => { const t = document.createElementNS(ns, 'text'); t.setAttribute('x', x + bw * 0.32); t.setAttribute('y', ty);
+    const lab = (txt, ty) => { const t = document.createElementNS(ns, 'text'); t.setAttribute('x', x + bw * 0.3); t.setAttribute('y', ty);
       t.setAttribute('text-anchor', 'middle'); t.textContent = txt; svg.append(t); };
     if (w.km > 0) lab(km(w.km), y - 5);
     lab(w.start.toLocaleDateString('nl-NL', { day: 'numeric', month: 'numeric' }), H - 6);
   });
-  document.getElementById('chart').replaceChildren(el('p', { class: 'note', style: 'margin:0 0 4px' }, 'Kilometers per week'), svg);
+  document.getElementById('chart').replaceChildren(svg);
+  }
 
   // Logboek (nieuwste eerst)
   const log = [...(data.logboek || [])].sort((a, b) => b.datum.localeCompare(a.datum));
   const lg = document.getElementById('log');
-  lg.replaceChildren();
-  if (!log.length) { lg.append(el('p', { class: 'empty' }, 'Nog geen trainingen gelogd.')); return; }
-  const fmtDur = m => { if (!m) return '–'; const h = Math.floor(m / 60), mm = Math.round(m % 60); return h ? `${h}:${String(mm).padStart(2,'0')} u` : `${mm} min`; };
-  lg.append(el('table', { class: 'log' },
-    el('thead', {}, el('tr', {}, el('th', {}, 'Datum'), el('th', {}, 'Training'), el('th', {}, 'Afstand'),
-      el('th', { class: 'hide-sm' }, 'Tijd'), el('th', { class: 'hide-sm' }, 'Tempo'))),
-    el('tbody', {}, ...log.map(r => el('tr', { class: r.status === 'gedaan' || r.status === 'gepland' ? '' : 'skipped' },
-      el('td', { class: 'num' }, fmtDate(r.datum)),
-      el('td', {}, r.titel, ' ', tag(r.type),
-        r.status !== 'gedaan' ? el('span', { class: 'status' }, STATUS[r.status] || r.status) : null,
-        r.notitie ? el('div', { class: 'note' }, r.notitie) : null),
-      el('td', { class: 'num' }, r.afstand_km ? `${km(r.afstand_km)} km` : '–'),
-      el('td', { class: 'num hide-sm' }, fmtDur(r.duur_min)),
-      el('td', { class: 'num hide-sm' }, r.tempo ? `${r.tempo} /km` : '–'),
-    )))));
+  if (!log.length) { lg.replaceChildren(el('p', { class: 'empty' }, 'Nog geen trainingen.')); return; }
+  const fmtDur = m => { const h = Math.floor(m / 60), mm = Math.round(m % 60); return h ? `${h}:${String(mm).padStart(2,'0')} u` : `${mm} min`; };
+  lg.replaceChildren(el('ul', { class: 'log' }, ...log.map(r => {
+    const meta = [r.afstand_km ? `${km(r.afstand_km)} km` : null, r.duur_min ? fmtDur(r.duur_min) : null,
+      r.tempo ? `${r.tempo}/km` : null].filter(Boolean).join(' · ');
+    return el('li', { class: r.status === 'overgeslagen' || r.status === 'geschrapt' ? 'skipped' : '' },
+      el('span', { class: 'd' }, fmtDate(r.datum)),
+      el('span', { class: 't' }, dot(r.type), ' ', r.titel,
+        r.status !== 'gedaan' ? el('span', { class: 'badge' }, STATUS[r.status] || r.status) : null),
+      meta ? el('span', { class: 'm' }, meta) : null);
+  })));
 }
 
 fetch('data.json', { cache: 'no-store' })
