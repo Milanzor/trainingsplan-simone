@@ -1,5 +1,5 @@
 {
-  "bijgewerkt": "2026-10-25T14:00:00+01:00",
+  "bijgewerkt": "2026-10-25T12:40:00+01:00",
   "melding": "Het schema start deze week met de eerste wandel-hardloop training.",
   "doel": {
     "titel": "5 Engelse Mijl (8,05 km) — Hoogeveense Cascaderun",
@@ -9,10 +9,17 @@
     "runs": 3,
     "km": null
   },
-  "vandaag": null,
+  "vandaag": {
+    "datum": "2026-10-25",
+    "titel": "Rustdag",
+    "type": "rust",
+    "beschrijving": "Vandaag nog niets. Morgen begint het schema.",
+    "doel": "Fris aan de eerste training beginnen",
+    "status": "gepland"
+  },
   "vooruitblik": [
     {
-      "wanneer": "Ma of di avond",
+      "wanneer": "Maandagavond (of dinsdag)",
       "titel": "Eerste training: 8× (1 min hardlopen, 2 min wandelen)",
       "type": "easy"
     },
@@ -32,7 +39,18 @@
       "type": "easy"
     }
   ],
-  "logboek": [],
+  "logboek": [
+    {
+      "datum": "2026-10-25",
+      "titel": "Rustdag",
+      "type": "rust",
+      "afstand_km": 0,
+      "duur_min": 0,
+      "tempo": null,
+      "status": "gedaan",
+      "notitie": "Laatste dag voor de start"
+    }
+  ],
   "racedatum": "2027-04-18",
   "fases": [
     {
