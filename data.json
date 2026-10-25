@@ -1,6 +1,6 @@
 {
-  "bijgewerkt": "2026-10-25T12:40:00+01:00",
-  "melding": "Het schema start deze week met de eerste wandel-hardloop training.",
+  "bijgewerkt": "2026-10-25T12:55:00+01:00",
+  "melding": "Vandaag de eerste training!",
   "doel": {
     "titel": "5 Engelse Mijl (8,05 km) — Hoogeveense Cascaderun",
     "toelichting": "Zondag 18 april 2027. Doel: de 8 km sterk en zonder wandelen uitlopen. Een tijdsdoel volgt na een testloop in februari."
@@ -11,16 +11,21 @@
   },
   "vandaag": {
     "datum": "2026-10-25",
-    "titel": "Rustdag",
-    "type": "rust",
-    "beschrijving": "Vandaag nog niets. Morgen begint het schema.",
-    "doel": "Fris aan de eerste training beginnen",
+    "titel": "Eerste training: 8× (1 min hardlopen, 2 min wandelen)",
+    "type": "easy",
+    "beschrijving": "5 min stevig wandelen, dan 8 keer 1 minuut rustig hardlopen en 2 minuten wandelen, en 5 min uitwandelen. Zo rustig dat je kunt praten. Staat op je horloge. Het waait flink; rond 19:00 is het het rustigst.",
+    "doel": "Rustig beginnen: pezen en gewoonte eerst",
     "status": "gepland"
   },
   "vooruitblik": [
     {
-      "wanneer": "Maandagavond (of dinsdag)",
-      "titel": "Eerste training: 8× (1 min hardlopen, 2 min wandelen)",
+      "wanneer": "Maandag",
+      "titel": "Rust of Pilates",
+      "type": "rust"
+    },
+    {
+      "wanneer": "Dinsdag/woensdag",
+      "titel": "Zelfde training nog een keer",
       "type": "easy"
     },
     {
@@ -29,12 +34,7 @@
       "type": "rust"
     },
     {
-      "wanneer": "Woensdag/donderdag",
-      "titel": "Zelfde training nog een keer",
-      "type": "easy"
-    },
-    {
-      "wanneer": "Weekend",
+      "wanneer": "Eind van de week",
       "titel": "Derde training van de week",
       "type": "easy"
     }
@@ -42,13 +42,13 @@
   "logboek": [
     {
       "datum": "2026-10-25",
-      "titel": "Rustdag",
-      "type": "rust",
-      "afstand_km": 0,
-      "duur_min": 0,
+      "titel": "Eerste training: 8× (1 min hardlopen, 2 min wandelen)",
+      "type": "easy",
+      "afstand_km": null,
+      "duur_min": null,
       "tempo": null,
-      "status": "gedaan",
-      "notitie": "Laatste dag voor de start"
+      "status": "gepland",
+      "notitie": ""
     }
   ],
   "racedatum": "2027-04-18",
