@@ -85,6 +85,11 @@
   </section>
 
   <section>
+    <h2>Opbouw naar de race</h2>
+    <div id="phases"></div>
+  </section>
+
+  <section>
     <h2>Voortgang</h2>
     <div class="stats" id="stats"></div>
     <div class="chart" id="chart" style="margin-top:16px"></div>
@@ -158,6 +163,22 @@ function render(data) {
     el('p', { style: 'margin:0;font-weight:600' }, data.doel?.titel || 'Nog niet vastgesteld'),
     data.doel?.toelichting ? el('p', { class: 'note', style: 'margin:4px 0 0' }, data.doel.toelichting) : null,
   );
+
+  // Opbouw (fases)
+  const ph = document.getElementById('phases');
+  ph.replaceChildren();
+  if (data.fases?.length) {
+    const todayIso = iso(new Date());
+    const race = data.racedatum ? Math.ceil((parseDate(data.racedatum) - parseDate(todayIso)) / 86400000) : null;
+    if (race != null && race >= 0) ph.append(el('p', { style: 'margin:0 0 10px;font-weight:600' }, `Nog ${race} dagen tot de race`));
+    ph.append(el('ul', { class: 'outlook' }, ...data.fases.map(f => {
+      const now = todayIso >= f.van && todayIso <= f.tot;
+      return el('li', {},
+        el('span', { class: 'when' }, `${fmtDate(f.van, { day: 'numeric', month: 'short' })} – ${fmtDate(f.tot, { day: 'numeric', month: 'short' })}`),
+        el('span', {}, el('b', {}, f.naam), now ? el('span', { class: 'tag', style: 'margin-left:6px;--tag:var(--accent)' }, 'nu') : null,
+          el('div', { class: 'note' }, f.omschrijving)));
+    })));
+  } else ph.append(el('p', { class: 'empty' }, 'Nog niet vastgesteld.'));
 
   // Voortgang
   const runs = (data.logboek || []).filter(r => r.status === 'gedaan' && r.afstand_km > 0);

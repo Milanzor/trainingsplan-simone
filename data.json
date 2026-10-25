@@ -1,15 +1,63 @@
 {
-  "bijgewerkt": "2026-10-25T13:00:00+01:00",
-  "melding": "Binnenkort: het schema start zodra haar Garmin gekoppeld is.",
+  "bijgewerkt": "2026-10-25T14:00:00+01:00",
+  "melding": "Het schema start deze week met de eerste wandel-hardloop training.",
   "doel": {
     "titel": "5 Engelse Mijl (8,05 km) — Hoogeveense Cascaderun",
-    "toelichting": "Zondag 18 april 2027. Drie keer per week hardlopen, met Reformer Pilates ernaast."
+    "toelichting": "Zondag 18 april 2027. Doel: de 8 km sterk en zonder wandelen uitlopen. Een tijdsdoel volgt na een testloop in februari."
   },
   "weekdoel": {
     "runs": 3,
     "km": null
   },
   "vandaag": null,
-  "vooruitblik": [],
-  "logboek": []
+  "vooruitblik": [
+    {
+      "wanneer": "Ma of di avond",
+      "titel": "Eerste training: 8× (1 min hardlopen, 2 min wandelen)",
+      "type": "easy"
+    },
+    {
+      "wanneer": "Dag erna",
+      "titel": "Rust of Pilates",
+      "type": "rust"
+    },
+    {
+      "wanneer": "Woensdag/donderdag",
+      "titel": "Zelfde training nog een keer",
+      "type": "easy"
+    },
+    {
+      "wanneer": "Weekend",
+      "titel": "Derde training van de week",
+      "type": "easy"
+    }
+  ],
+  "logboek": [],
+  "racedatum": "2027-04-18",
+  "fases": [
+    {
+      "naam": "Fase 1 · Wandelen en hardlopen",
+      "van": "2026-10-26",
+      "tot": "2026-12-20",
+      "omschrijving": "Afwisselend hardlopen en wandelen, van 1 minuut hardlopen naar zo'n 12 minuten aan één stuk. Rustig tempo: je moet kunnen praten."
+    },
+    {
+      "naam": "Fase 2 · Doorlopen",
+      "van": "2026-12-21",
+      "tot": "2027-02-07",
+      "omschrijving": "Van 20 naar 30 minuten zonder wandelen, en in het weekend een iets langere loop."
+    },
+    {
+      "naam": "Fase 3 · Opbouwen",
+      "van": "2027-02-08",
+      "tot": "2027-03-28",
+      "omschrijving": "Eén pittigere training per week en een lange loop tot ruim 9 km. Testloop over 5 km eind februari."
+    },
+    {
+      "naam": "Fase 4 · Racevoorbereiding",
+      "van": "2027-03-29",
+      "tot": "2027-04-18",
+      "omschrijving": "Racetempo oefenen, daarna rustiger aan zodat je fris aan de start staat."
+    }
+  ]
 }

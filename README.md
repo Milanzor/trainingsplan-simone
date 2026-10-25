@@ -20,7 +20,9 @@ root folder (`.nojekyll`, no build step).
   "bijgewerkt": "2026-10-26T07:20:00+01:00",   // ISO timestamp of this update
   "melding": "…",                              // shown when `vandaag` is null (optional)
   "doel": { "titel": "…", "toelichting": "…" },
-  "weekdoel": { "runs": 3, "km": 20 },         // or null
+  "weekdoel": { "runs": 3, "km": 20 },         // or null; km may be null
+  "racedatum": "2027-04-18",                   // countdown in the "Opbouw" section
+  "fases": [ { "naam": "Fase 1 · …", "van": "2026-10-26", "tot": "2026-12-20", "omschrijving": "…" } ],
   "vandaag": {                                 // or null
     "datum": "2026-10-26", "titel": "Rustige duurloop 30 min", "type": "easy",
     "beschrijving": "Rustig tempo, je moet kunnen praten.", "doel": "Basis opbouwen",
