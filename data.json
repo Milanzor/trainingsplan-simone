@@ -1,5 +1,5 @@
 {
-  "bijgewerkt": "2026-10-25T13:30:00+01:00",
+  "bijgewerkt": "2026-10-25T14:15:00+01:00",
   "melding": "Rustdag",
   "doel": {
     "titel": "5 Engelse Mijl · Cascaderun Hoogeveen · 18 april 2027",
@@ -13,9 +13,9 @@
     "datum": "2026-10-25",
     "titel": "8× 1 min hardlopen, 2 min wandelen",
     "type": "easy",
-    "beschrijving": "5 min wandelen vooraf en achteraf. Rustig, zodat je kunt praten. Rond 19:00 waait het het minst.",
+    "beschrijving": "Gelukt! Je eerste training zit erop.",
     "doel": "Rustig beginnen",
-    "status": "gepland",
+    "status": "gedaan",
     "in_garmin": true
   },
   "vooruitblik": [
@@ -26,7 +26,7 @@
     },
     {
       "wanneer": "Di of wo",
-      "titel": "Zelfde training",
+      "titel": "Zelfde training, 8 keer",
       "type": "easy"
     },
     {
@@ -36,20 +36,20 @@
     },
     {
       "wanneer": "Eind week",
-      "titel": "Derde training",
+      "titel": "8× 1,5 min hardlopen",
       "type": "easy"
     }
   ],
   "logboek": [
     {
       "datum": "2026-10-25",
-      "titel": "8× 1 min hardlopen, 2 min wandelen",
+      "titel": "Eerste training: 1 min hardlopen, 2 min wandelen",
       "type": "easy",
-      "afstand_km": null,
-      "duur_min": null,
+      "afstand_km": 5.0,
+      "duur_min": 42,
       "tempo": null,
-      "status": "gepland",
-      "notitie": ""
+      "status": "gedaan",
+      "terugblik": "Wat een start! Je liep zelfs 12 keer een minuut in plaats van 8, rustig en gelijkmatig, en aan het eind nog net zo ontspannen als in het begin. Houd het de volgende keer bij 8, zodat je pezen rustig kunnen wennen; je horloge loopt nu vanzelf mee en zegt wanneer je klaar bent."
     }
   ],
   "racedatum": "2027-04-18",
