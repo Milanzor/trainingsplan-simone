@@ -46,6 +46,8 @@ root folder (`.nojekyll`, no build step).
 
 - **Dutch, written for Simone**: short, friendly, no jargon (no "Z2", "LTHR", "ACWR").
   Describe effort in plain words ("rustig, je kunt praten").
+- **Garmin:** when today's session has been scheduled in her Garmin, `vandaag.beschrijving`
+  says so ("Deze training staat in je Garmin."). Leave it out on rest days or if the push failed.
 - **Training data only.** Never publish HRV, resting heart rate, sleep, readiness, Body
   Battery, weight, illness/injury details, or her surname. A reason like "na een drukke
   week rustig aan" is fine; "HRV laag" is not.
