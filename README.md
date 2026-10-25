@@ -32,7 +32,7 @@ root folder (`.nojekyll`, no build step).
   "logboek": [                                 // every day with a prescription; newest last or first
     { "datum": "2026-10-26", "titel": "Rustige duurloop", "type": "easy",
       "afstand_km": 4.8, "duur_min": 31.5, "tempo": "6:34", "status": "gedaan",
-      "notitie": "Mooi gelijkmatig" }
+      "terugblik": "Alle acht stukjes hardlopen netjes uitgelopen, en in een rustig tempo. Precies goed! Volgende keer hetzelfde, daarna een stapje verder." }
   ]
 }
 ```
@@ -50,7 +50,14 @@ root folder (`.nojekyll`, no build step).
   her Garmin; the page then shows a "Staat in je Garmin" badge. Omit it on rest days or if the push failed.
 - **Keep it short.** Titles ≤ ~40 characters, `beschrijving` one or two short sentences,
   `vooruitblik.titel` a few words. The page shows only the current phase's `omschrijving`;
-  `doel.toelichting`, `vandaag.doel` and `logboek.notitie` are kept in the data but not shown.
+  `doel.toelichting` and `vandaag.doel` are kept in the data but not shown.
+- **Terugblik (coach's assessment) on every completed run.** When the routine closes out a
+  run, it writes `logboek[].terugblik`: 2–3 short sentences in Dutch, addressed to Simone
+  ("je"), from her Garmin data only. Say what went well (all run parts completed, steady pace,
+  relaxed effort), give at most one concrete tip, and what comes next ("volgende keer
+  hetzelfde" / "volgende keer een stapje verder"). Warm and encouraging, never patronizing, no
+  jargon, no heart-rate numbers, nothing about weight. For a skipped day leave it out:
+  no comment on missed sessions. The page shows it under the entry as a "Coach" note.
 - **Training data only.** Never publish HRV, resting heart rate, sleep, readiness, Body
   Battery, weight, illness/injury details, or her surname. A reason like "na een drukke
   week rustig aan" is fine; "HRV laag" is not.

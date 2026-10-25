@@ -72,17 +72,21 @@
   .chart text { fill: var(--muted); font-size: 11px; font-family: "DM Sans", sans-serif; }
 
   ul.log { list-style: none; margin: 0; padding: 0; }
-  ul.log li { display: flex; gap: 12px; align-items: baseline; padding: 10px 0; border-top: 1px solid var(--line); }
+  ul.log li { display: flex; flex-wrap: wrap; gap: 4px 12px; align-items: baseline; padding: 12px 0; border-top: 1px solid var(--line); }
   ul.log li:first-child { border-top: 0; padding-top: 0; }
   ul.log .d { min-width: 74px; color: var(--muted); font-size: .85rem; }
   ul.log .t { flex: 1; }
   ul.log .m { color: var(--muted); font-size: .85rem; white-space: nowrap; }
+  ul.log .review { flex-basis: 100%; margin: 6px 0 0 86px; padding: 10px 14px; border-radius: 14px;
+    background: linear-gradient(135deg, var(--blush), var(--lilac)); font: italic 400 .95rem/1.5 Fraunces, Georgia, serif; color: var(--text); }
+  ul.log .review::before { content: "Coach · "; font: 600 .72rem "DM Sans", sans-serif; letter-spacing: .1em; text-transform: uppercase; color: var(--accent); }
   ul.log li.skipped { color: var(--muted); text-decoration: line-through; text-decoration-color: var(--rest); }
   .badge { font-size: .72rem; color: var(--accent-deep); background: var(--accent-soft); padding: 1px 8px; border-radius: 999px; margin-left: 6px; }
   .empty { color: var(--muted); margin: 0; }
   footer { text-align: center; color: var(--muted); font-size: .78rem; margin-top: 26px; }
 
   @media (max-width: 520px) {
+    ul.log .review { margin-left: 0; }
     header h1 { font-size: 2.3rem; }
     .today-title { font-size: 1.35rem; }
     section { padding: 18px; border-radius: 18px; }
@@ -263,7 +267,8 @@ function render(data) {
       el('span', { class: 'd' }, fmtDate(r.datum)),
       el('span', { class: 't' }, dot(r.type), ' ', r.titel,
         r.status !== 'gedaan' ? el('span', { class: 'badge' }, STATUS[r.status] || r.status) : null),
-      meta ? el('span', { class: 'm' }, meta) : null);
+      meta ? el('span', { class: 'm' }, meta) : null,
+      r.terugblik ? el('div', { class: 'review' }, r.terugblik) : null);
   })));
 }
 
