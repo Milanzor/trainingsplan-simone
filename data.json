@@ -1,11 +1,14 @@
 {
-  "bijgewerkt": "2026-10-25T12:30:00+01:00",
+  "bijgewerkt": "2026-10-25T13:00:00+01:00",
   "melding": "Binnenkort: het schema start zodra haar Garmin gekoppeld is.",
   "doel": {
-    "titel": "Nog niet vastgesteld",
-    "toelichting": ""
+    "titel": "5 Engelse Mijl (8,05 km) — Hoogeveense Cascaderun",
+    "toelichting": "Zondag 18 april 2027. Drie keer per week hardlopen, met Reformer Pilates ernaast."
   },
-  "weekdoel": null,
+  "weekdoel": {
+    "runs": 3,
+    "km": null
+  },
   "vandaag": null,
   "vooruitblik": [],
   "logboek": []
