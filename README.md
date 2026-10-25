@@ -1,0 +1,50 @@
+# trainingsplan-simone
+
+Public GitHub Pages site (Dutch) showing Simone's running progress, today's session and
+the outlook for the coming days. Maintained by the running-coach agent
+(`Milanzor/agent.postvak7.nl.running-coach`); the source of truth is `simone/PLAN.md`
+there. This repo only holds the published view.
+
+Site: https://milanzor.github.io/trainingsplan-simone/
+
+## How it works
+
+`index.html` is static and renders everything from **`data.json`**. Each morning the
+routine edits only `data.json`, then commits and pushes. Pages deploys `main` from the
+root folder (`.nojekyll`, no build step).
+
+## data.json
+
+```jsonc
+{
+  "bijgewerkt": "2026-10-26T07:20:00+01:00",   // ISO timestamp of this update
+  "melding": "…",                              // shown when `vandaag` is null (optional)
+  "doel": { "titel": "…", "toelichting": "…" },
+  "weekdoel": { "runs": 3, "km": 20 },         // or null
+  "vandaag": {                                 // or null
+    "datum": "2026-10-26", "titel": "Rustige duurloop 30 min", "type": "easy",
+    "beschrijving": "Rustig tempo, je moet kunnen praten.", "doel": "Basis opbouwen",
+    "status": "gepland"
+  },
+  "vooruitblik": [ { "wanneer": "Morgen", "titel": "Rust of wandelen", "type": "rust" } ],
+  "logboek": [                                 // every day with a prescription; newest last or first
+    { "datum": "2026-10-26", "titel": "Rustige duurloop", "type": "easy",
+      "afstand_km": 4.8, "duur_min": 31.5, "tempo": "6:34", "status": "gedaan",
+      "notitie": "Mooi gelijkmatig" }
+  ]
+}
+```
+
+- `type`: `easy` · `kwaliteit` · `lang` · `rust` · `kracht` · `anders`
+- `status`: `gepland` · `gedaan` · `overgeslagen` · `geschrapt`
+- Progress stats and the weekly-km chart are computed in the page from `logboek`
+  (entries with `status: "gedaan"` and `afstand_km > 0`).
+
+## Rules (public page)
+
+- **Dutch, written for Simone**: short, friendly, no jargon (no "Z2", "LTHR", "ACWR").
+  Describe effort in plain words ("rustig, je kunt praten").
+- **Training data only.** Never publish HRV, resting heart rate, sleep, readiness, Body
+  Battery, weight, illness/injury details, or her surname. A reason like "na een drukke
+  week rustig aan" is fine; "HRV laag" is not.
+- Activity IDs and Garmin links stay out of the page.

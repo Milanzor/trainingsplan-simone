@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trainingsplan Simone</title>
+<meta name="robots" content="noindex">
+<style>
+  :root {
+    --bg: #f6f5f2; --card: #ffffff; --text: #1d1d1b; --muted: #6b6a66; --line: #e4e2dc;
+    --accent: #d9480f; --accent-soft: #fde8dc; --done: #2b8a3e; --skip: #a8a49b;
+    --easy: #2f9e44; --quality: #d9480f; --long: #1c7ed6; --rest: #868e96; --other: #7048e8;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #151514; --card: #1f1f1d; --text: #ecebe7; --muted: #a09e98; --line: #33322f;
+      --accent: #ff8a4c; --accent-soft: #3a2418; --done: #51cf66; --skip: #6b6a66;
+      --easy: #51cf66; --quality: #ff8a4c; --long: #4dabf7; --rest: #adb5bd; --other: #9775fa;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #151514; --card: #1f1f1d; --text: #ecebe7; --muted: #a09e98; --line: #33322f;
+    --accent: #ff8a4c; --accent-soft: #3a2418; --done: #51cf66; --skip: #6b6a66;
+    --easy: #51cf66; --quality: #ff8a4c; --long: #4dabf7; --rest: #adb5bd; --other: #9775fa;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text);
+    font: 16px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  main { max-width: 760px; margin: 0 auto; padding: 24px 16px 48px; }
+  header h1 { margin: 0; font-size: 1.75rem; letter-spacing: -0.01em; }
+  header p { margin: 4px 0 0; color: var(--muted); font-size: 0.9rem; }
+  section { background: var(--card); border: 1px solid var(--line); border-radius: 14px;
+    padding: 18px; margin-top: 16px; }
+  h2 { margin: 0 0 12px; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em;
+    color: var(--muted); font-weight: 600; }
+  .today-title { font-size: 1.4rem; font-weight: 700; margin: 0; }
+  .today-desc { margin: 6px 0 0; }
+  .today-goal { margin: 8px 0 0; color: var(--muted); font-size: 0.95rem; }
+  .tag { display: inline-block; font-size: 0.75rem; font-weight: 600; padding: 2px 8px;
+    border-radius: 999px; color: #fff; background: var(--tag, var(--other)); vertical-align: middle; }
+  .status { font-size: 0.8rem; color: var(--muted); margin-left: 6px; }
+  .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px; }
+  .stat { border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; }
+  .stat b { display: block; font-size: 1.4rem; }
+  .stat span { color: var(--muted); font-size: 0.85rem; }
+  .bar-track { height: 8px; background: var(--line); border-radius: 4px; margin-top: 6px; overflow: hidden; }
+  .bar-fill { height: 100%; background: var(--accent); }
+  ul.outlook { list-style: none; margin: 0; padding: 0; }
+  ul.outlook li { display: flex; gap: 10px; align-items: baseline; padding: 8px 0;
+    border-top: 1px solid var(--line); }
+  ul.outlook li:first-child { border-top: 0; }
+  .when { min-width: 90px; color: var(--muted); font-size: 0.9rem; }
+  .chart svg { width: 100%; height: auto; display: block; }
+  .chart text { fill: var(--muted); font-size: 11px; }
+  .log { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+  .log th, .log td { text-align: left; padding: 7px 6px; border-top: 1px solid var(--line); vertical-align: top; }
+  .log th { color: var(--muted); font-weight: 600; border-top: 0; }
+  .log td.num { white-space: nowrap; }
+  .log tr.skipped td { color: var(--skip); }
+  .note { color: var(--muted); font-size: 0.85rem; }
+  .empty { color: var(--muted); margin: 0; }
+  @media (max-width: 520px) { .log .hide-sm { display: none; } }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>Trainingsplan Simone</h1>
+    <p id="updated">Laden…</p>
+  </header>
+
+  <section>
+    <h2>Vandaag</h2>
+    <div id="today"><p class="empty">Laden…</p></div>
+  </section>
+
+  <section>
+    <h2>Komende dagen</h2>
+    <div id="outlook"></div>
+  </section>
+
+  <section>
+    <h2>Doel</h2>
+    <div id="goal"></div>
+  </section>
+
+  <section>
+    <h2>Voortgang</h2>
+    <div class="stats" id="stats"></div>
+    <div class="chart" id="chart" style="margin-top:16px"></div>
+  </section>
+
+  <section>
+    <h2>Logboek</h2>
+    <div id="log"></div>
+  </section>
+</main>
+
+<script>
+const TYPES = {
+  easy:     { label: 'Rustig',    color: 'var(--easy)' },
+  kwaliteit:{ label: 'Kwaliteit', color: 'var(--quality)' },
+  lang:     { label: 'Lange duur',color: 'var(--long)' },
+  rust:     { label: 'Rust',      color: 'var(--rest)' },
+  kracht:   { label: 'Kracht',    color: 'var(--other)' },
+  anders:   { label: 'Anders',    color: 'var(--other)' },
+};
+const STATUS = { gepland: 'gepland', gedaan: 'gedaan ✓', overgeslagen: 'overgeslagen', geschrapt: 'geschrapt' };
+
+const el = (tag, attrs = {}, ...kids) => {
+  const n = document.createElement(tag);
+  for (const [k, v] of Object.entries(attrs)) {
+    if (k === 'class') n.className = v; else if (k === 'style') n.style.cssText = v; else n.setAttribute(k, v);
+  }
+  for (const k of kids) if (k != null) n.append(k);
+  return n;
+};
+const tag = t => { const ty = TYPES[t] || TYPES.anders; return el('span', { class: 'tag', style: `--tag:${ty.color}` }, ty.label); };
+const parseDate = s => { const [y, m, d] = s.split('-').map(Number); return new Date(y, m - 1, d); };
+const fmtDate = (s, opts = { weekday: 'short', day: 'numeric', month: 'short' }) =>
+  parseDate(s).toLocaleDateString('nl-NL', opts);
+const km = n => n.toLocaleString('nl-NL', { maximumFractionDigits: 1 });
+const mondayOf = d => { const x = new Date(d); x.setHours(0,0,0,0); x.setDate(x.getDate() - ((x.getDay() + 6) % 7)); return x; };
+const iso = d => `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
+
+function render(data) {
+  const upd = data.bijgewerkt ? new Date(data.bijgewerkt) : null;
+  document.getElementById('updated').textContent = upd
+    ? 'Bijgewerkt ' + upd.toLocaleString('nl-NL', { weekday: 'long', day: 'numeric', month: 'long', hour: '2-digit', minute: '2-digit' })
+    : '';
+
+  // Vandaag
+  const t = data.vandaag, today = document.getElementById('today');
+  today.replaceChildren();
+  if (t && t.titel) {
+    today.append(
+      el('p', { class: 'note' }, fmtDate(t.datum, { weekday: 'long', day: 'numeric', month: 'long' })),
+      el('p', { class: 'today-title' }, t.titel, ' ', tag(t.type), el('span', { class: 'status' }, STATUS[t.status] || t.status || '')),
+      t.beschrijving ? el('p', { class: 'today-desc' }, t.beschrijving) : null,
+      t.doel ? el('p', { class: 'today-goal' }, 'Waarom: ' + t.doel) : null,
+    );
+  } else {
+    today.append(el('p', { class: 'empty' }, data.melding || 'Nog geen training voor vandaag.'));
+  }
+
+  // Komende dagen
+  const out = document.getElementById('outlook');
+  out.replaceChildren();
+  if (data.vooruitblik?.length) {
+    out.append(el('ul', { class: 'outlook' }, ...data.vooruitblik.map(v =>
+      el('li', {}, el('span', { class: 'when' }, v.wanneer), el('span', {}, v.titel, ' ', tag(v.type))))));
+    out.append(el('p', { class: 'note', style: 'margin:10px 0 0' }, 'Een vooruitblik, geen vast schema: elke ochtend wordt de training van die dag bepaald op basis van herstel en de afgelopen dagen.'));
+  } else out.append(el('p', { class: 'empty' }, 'Nog geen vooruitblik.'));
+
+  // Doel
+  const g = document.getElementById('goal');
+  g.replaceChildren(
+    el('p', { style: 'margin:0;font-weight:600' }, data.doel?.titel || 'Nog niet vastgesteld'),
+    data.doel?.toelichting ? el('p', { class: 'note', style: 'margin:4px 0 0' }, data.doel.toelichting) : null,
+  );
+
+  // Voortgang
+  const runs = (data.logboek || []).filter(r => r.status === 'gedaan' && r.afstand_km > 0);
+  const now = new Date(), wk = mondayOf(now);
+  const inWeek = runs.filter(r => parseDate(r.datum) >= wk);
+  const weekKm = inWeek.reduce((a, r) => a + r.afstand_km, 0);
+  const monthStart = new Date(now.getFullYear(), now.getMonth(), 1);
+  const monthKm = runs.filter(r => parseDate(r.datum) >= monthStart).reduce((a, r) => a + r.afstand_km, 0);
+  const totalKm = runs.reduce((a, r) => a + r.afstand_km, 0);
+  const goalRuns = data.weekdoel?.runs, goalKm = data.weekdoel?.km;
+  const stat = (big, small, frac) => el('div', { class: 'stat' }, el('b', {}, big), el('span', {}, small),
+    frac != null ? el('div', { class: 'bar-track' }, el('div', { class: 'bar-fill', style: `width:${Math.min(100, Math.round(frac * 100))}%` })) : null);
+  document.getElementById('stats').replaceChildren(
+    stat(goalRuns ? `${inWeek.length} / ${goalRuns}` : String(inWeek.length), 'runs deze week', goalRuns ? inWeek.length / goalRuns : null),
+    stat(goalKm ? `${km(weekKm)} / ${goalKm} km` : `${km(weekKm)} km`, 'deze week', goalKm ? weekKm / goalKm : null),
+    stat(`${km(monthKm)} km`, now.toLocaleDateString('nl-NL', { month: 'long' })),
+    stat(`${km(totalKm)} km`, `totaal (${runs.length} runs)`),
+  );
+
+  // Weekgrafiek: laatste 10 weken
+  const weeks = [];
+  for (let i = 9; i >= 0; i--) { const s = new Date(wk); s.setDate(s.getDate() - 7 * i); weeks.push({ start: s, km: 0 }); }
+  for (const r of runs) {
+    const m = iso(mondayOf(parseDate(r.datum)));
+    const w = weeks.find(w => iso(w.start) === m); if (w) w.km += r.afstand_km;
+  }
+  const max = Math.max(10, ...weeks.map(w => w.km));
+  const W = 600, H = 170, pad = 22, bw = (W - 20) / weeks.length;
+  const ns = 'http://www.w3.org/2000/svg';
+  const svg = document.createElementNS(ns, 'svg'); svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
+  svg.setAttribute('role', 'img'); svg.setAttribute('aria-label', 'Kilometers per week, laatste 10 weken');
+  weeks.forEach((w, i) => {
+    const h = (w.km / max) * (H - pad * 2), x = 10 + i * bw + bw * 0.18, y = H - pad - h;
+    const r = document.createElementNS(ns, 'rect');
+    Object.entries({ x, y, width: bw * 0.64, height: Math.max(h, 1), rx: 4,
+      fill: i === weeks.length - 1 ? 'var(--accent)' : 'var(--line)' }).forEach(([k, v]) => r.setAttribute(k, v));
+    const tt = document.createElementNS(ns, 'title'); tt.textContent = `week van ${w.start.toLocaleDateString('nl-NL')}: ${km(w.km)} km`; r.append(tt);
+    svg.append(r);
+    const lab = (txt, ty) => { const t = document.createElementNS(ns, 'text'); t.setAttribute('x', x + bw * 0.32); t.setAttribute('y', ty);
+      t.setAttribute('text-anchor', 'middle'); t.textContent = txt; svg.append(t); };
+    if (w.km > 0) lab(km(w.km), y - 5);
+    lab(w.start.toLocaleDateString('nl-NL', { day: 'numeric', month: 'numeric' }), H - 6);
+  });
+  document.getElementById('chart').replaceChildren(el('p', { class: 'note', style: 'margin:0 0 4px' }, 'Kilometers per week'), svg);
+
+  // Logboek (nieuwste eerst)
+  const log = [...(data.logboek || [])].sort((a, b) => b.datum.localeCompare(a.datum));
+  const lg = document.getElementById('log');
+  lg.replaceChildren();
+  if (!log.length) { lg.append(el('p', { class: 'empty' }, 'Nog geen trainingen gelogd.')); return; }
+  const fmtDur = m => { if (!m) return '–'; const h = Math.floor(m / 60), mm = Math.round(m % 60); return h ? `${h}:${String(mm).padStart(2,'0')} u` : `${mm} min`; };
+  lg.append(el('table', { class: 'log' },
+    el('thead', {}, el('tr', {}, el('th', {}, 'Datum'), el('th', {}, 'Training'), el('th', {}, 'Afstand'),
+      el('th', { class: 'hide-sm' }, 'Tijd'), el('th', { class: 'hide-sm' }, 'Tempo'))),
+    el('tbody', {}, ...log.map(r => el('tr', { class: r.status === 'gedaan' || r.status === 'gepland' ? '' : 'skipped' },
+      el('td', { class: 'num' }, fmtDate(r.datum)),
+      el('td', {}, r.titel, ' ', tag(r.type),
+        r.status !== 'gedaan' ? el('span', { class: 'status' }, STATUS[r.status] || r.status) : null,
+        r.notitie ? el('div', { class: 'note' }, r.notitie) : null),
+      el('td', { class: 'num' }, r.afstand_km ? `${km(r.afstand_km)} km` : '–'),
+      el('td', { class: 'num hide-sm' }, fmtDur(r.duur_min)),
+      el('td', { class: 'num hide-sm' }, r.tempo ? `${r.tempo} /km` : '–'),
+    )))));
+}
+
+fetch('data.json', { cache: 'no-store' })
+  .then(r => r.json()).then(render)
+  .catch(() => { document.getElementById('today').replaceChildren(el('p', { class: 'empty' }, 'Kon de gegevens niet laden.')); });
+</script>
+</body>
+</html>
