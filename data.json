@@ -1,5 +1,5 @@
 {
-  "bijgewerkt": "2026-10-26T07:15:00+01:00",
+  "bijgewerkt": "2026-10-27T07:15:00+01:00",
   "melding": "Rustdag",
   "doel": {
     "titel": "5 Engelse Mijl · Cascaderun Hoogeveen · 18 april 2027",
@@ -10,26 +10,26 @@
     "km": null
   },
   "vandaag": {
-    "datum": "2026-10-26",
+    "datum": "2026-10-27",
     "titel": "Rustdag",
     "type": "rust",
-    "beschrijving": "Rust, of Pilates als je zin hebt. Je benen wennen aan gisteren.",
+    "beschrijving": "Vanavond regent het, dus nog een dag rust of Pilates. Morgen is het droog.",
     "doel": "Herstel",
     "status": "gepland"
   },
   "vooruitblik": [
     {
-      "wanneer": "Di of wo",
+      "wanneer": "Wo",
       "titel": "8× 1 min hardlopen, 2 min wandelen",
       "type": "easy"
     },
     {
-      "wanneer": "Dag erna",
+      "wanneer": "Do",
       "titel": "Rust of Pilates",
       "type": "rust"
     },
     {
-      "wanneer": "Do t/m zo",
+      "wanneer": "Vr t/m zo",
       "titel": "8× 1,5 min hardlopen",
       "type": "easy"
     }
@@ -47,6 +47,15 @@
     },
     {
       "datum": "2026-10-26",
+      "titel": "Rustdag",
+      "type": "rust",
+      "afstand_km": null,
+      "duur_min": null,
+      "tempo": null,
+      "status": "gedaan"
+    },
+    {
+      "datum": "2026-10-27",
       "titel": "Rustdag",
       "type": "rust",
       "afstand_km": null,
