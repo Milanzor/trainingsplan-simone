@@ -1,6 +1,6 @@
 {
-  "bijgewerkt": "2026-10-27T18:30:00+01:00",
-  "melding": "Training gedaan",
+  "bijgewerkt": "2026-10-28T07:15:00+01:00",
+  "melding": "Rustdag",
   "doel": {
     "titel": "5 Engelse Mijl · Cascaderun Hoogeveen · 18 april 2027",
     "toelichting": "8 km sterk en zonder wandelen uitlopen."
@@ -10,19 +10,14 @@
     "km": null
   },
   "vandaag": {
-    "datum": "2026-10-27",
-    "titel": "1 min hardlopen, 2 min wandelen",
-    "type": "easy",
-    "beschrijving": "Toch gelopen in plaats van Pilates. Morgen rust.",
-    "doel": "Wennen aan hardlopen",
-    "status": "gedaan"
+    "datum": "2026-10-28",
+    "titel": "Rustdag",
+    "type": "rust",
+    "beschrijving": "Rust, of Pilates als je zin hebt. Morgen of later de volgende stap.",
+    "doel": "Herstel",
+    "status": "gepland"
   },
   "vooruitblik": [
-    {
-      "wanneer": "Wo",
-      "titel": "Rust of Pilates",
-      "type": "rust"
-    },
     {
       "wanneer": "Do t/m za",
       "titel": "8× 1,5 min hardlopen, 2 min wandelen",
@@ -32,6 +27,11 @@
       "wanneer": "Dag erna",
       "titel": "Rust of Pilates",
       "type": "rust"
+    },
+    {
+      "wanneer": "Daarna",
+      "titel": "8× 1,5 min hardlopen",
+      "type": "easy"
     }
   ],
   "logboek": [
@@ -63,6 +63,15 @@
       "tempo": null,
       "status": "gedaan",
       "terugblik": "Geen Pilates, dan maar lopen: goed bezig! Je liep 11 keer zo'n minuut, weer meer dan de 8 van het plan, dus je bent klaar voor de volgende stap. Neem de volgende keer de wandelstukjes echt de volle 2 minuten en eindig met 5 minuten uitwandelen; morgen rust, daarna 1,5 minuut hardlopen per keer."
+    },
+    {
+      "datum": "2026-10-28",
+      "titel": "Rustdag",
+      "type": "rust",
+      "afstand_km": null,
+      "duur_min": null,
+      "tempo": null,
+      "status": "gepland"
     }
   ],
   "racedatum": "2027-04-18",
