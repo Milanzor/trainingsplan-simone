@@ -1,5 +1,5 @@
 {
-  "bijgewerkt": "2026-10-30T07:15:00+01:00",
+  "bijgewerkt": "2026-10-31T07:15:00+01:00",
   "melding": "Training vandaag",
   "doel": {
     "titel": "5 Engelse Mijl · Cascaderun Hoogeveen · 18 april 2027",
@@ -10,22 +10,22 @@
     "km": null
   },
   "vandaag": {
-    "datum": "2026-10-30",
+    "datum": "2026-10-31",
     "titel": "8× 1,5 min hardlopen, 2 min wandelen",
     "type": "easy",
-    "beschrijving": "Gisteren is het er niet van gekomen, geen probleem: vandaag weer een kans. Droog en windstil.",
+    "beschrijving": "Zaterdag, mooie dag voor je loopje: droog, rond 10 graden en ’s middags bijna windstil.",
     "doel": "Wennen aan hardlopen",
     "status": "gepland",
     "in_garmin": true
   },
   "vooruitblik": [
     {
-      "wanneer": "Za",
+      "wanneer": "Zo",
       "titel": "Rust of Pilates",
       "type": "rust"
     },
     {
-      "wanneer": "Zo",
+      "wanneer": "Ma",
       "titel": "8× 1,5 min hardlopen, 2 min wandelen",
       "type": "easy"
     },
@@ -85,6 +85,15 @@
     },
     {
       "datum": "2026-10-30",
+      "titel": "8× 1,5 min hardlopen, 2 min wandelen",
+      "type": "easy",
+      "afstand_km": null,
+      "duur_min": null,
+      "tempo": null,
+      "status": "overgeslagen"
+    },
+    {
+      "datum": "2026-10-31",
       "titel": "8× 1,5 min hardlopen, 2 min wandelen",
       "type": "easy",
       "afstand_km": null,
