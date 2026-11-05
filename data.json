@@ -1,5 +1,5 @@
 {
-  "bijgewerkt": "2026-11-04T07:15:00+01:00",
+  "bijgewerkt": "2026-11-05T07:15:00+01:00",
   "melding": "Rustdag",
   "doel": {
     "titel": "5 Engelse Mijl · Cascaderun Hoogeveen · 18 april 2027",
@@ -10,20 +10,15 @@
     "km": null
   },
   "vandaag": {
-    "datum": "2026-11-04",
-    "titel": "8× 1,5 min hardlopen, 2 min wandelen",
-    "type": "easy",
-    "beschrijving": "Gisteren Pilates, vandaag de looptraining: 5 min wandelen, 8× 1,5 min rustig hardlopen met steeds 2 min wandelen, en 5 min uitwandelen. Je horloge doet alles vanzelf. Droog, maar er staat wat wind en het is 's avonds 6–8 graden, dus trek iets warms aan.",
-    "doel": "Stap 2 nog een keer, daarna een stapje verder",
+    "datum": "2026-11-05",
+    "titel": "Rust of Pilates",
+    "type": "rust",
+    "beschrijving": "Gisteren gelopen, vandaag rust. Vrijdag staat stap 3 klaar op je horloge: 7× 2 minuten hardlopen met steeds 2 minuten wandelen.",
+    "doel": "Herstellen",
     "status": "gepland",
-    "in_garmin": true
+    "in_garmin": false
   },
   "vooruitblik": [
-    {
-      "wanneer": "Do",
-      "titel": "Rust of Pilates",
-      "type": "rust"
-    },
     {
       "wanneer": "Vr",
       "titel": "7× 2 min hardlopen, 2 min wandelen",
@@ -33,6 +28,11 @@
       "wanneer": "Za",
       "titel": "Rust of Pilates",
       "type": "rust"
+    },
+    {
+      "wanneer": "Zo",
+      "titel": "7× 2 min hardlopen, 2 min wandelen",
+      "type": "easy"
     }
   ],
   "logboek": [
@@ -133,6 +133,16 @@
       "datum": "2026-11-04",
       "titel": "8× 1,5 min hardlopen, 2 min wandelen",
       "type": "easy",
+      "afstand_km": 5.1,
+      "duur_min": 46,
+      "tempo": null,
+      "status": "gedaan",
+      "terugblik": "Weer helemaal goed gedaan: alle acht keer 1,5 minuut hardgelopen en steeds de volle 2 minuten gewandeld. Het voelde voor je lichaam zelfs iets makkelijker dan zondag, en dat is precies het teken dat je klaar bent voor de volgende stap. Vrijdag ga je naar 2 minuten hardlopen."
+    },
+    {
+      "datum": "2026-11-05",
+      "titel": "Rust of Pilates",
+      "type": "rust",
       "afstand_km": null,
       "duur_min": null,
       "tempo": null,
