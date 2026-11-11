@@ -1,5 +1,5 @@
 {
-  "bijgewerkt": "2026-11-10T07:20:00+01:00",
+  "bijgewerkt": "2026-11-11T07:15:00+01:00",
   "melding": "Vandaag stap 3",
   "doel": {
     "titel": "5 Engelse Mijl · Cascaderun Hoogeveen · 18 april 2027",
@@ -10,27 +10,27 @@
     "km": null
   },
   "vandaag": {
-    "datum": "2026-11-10",
+    "datum": "2026-11-11",
     "titel": "7× 2 min hardlopen, 2 min wandelen",
     "type": "easy",
-    "beschrijving": "Stap 3 nog een keer: 5 minuten inwandelen, dan 7 keer 2 minuten rustig hardlopen met steeds 2 minuten wandelen, en 5 minuten uitwandelen. Je horloge loopt vanzelf mee. Droog maar koud (4–5 °C), weinig wind; tussen 13 en 16 uur is het het minst koud. Handschoenen aan!",
+    "beschrijving": "Stap 3 nog een keer: 5 minuten inwandelen, dan 7 keer 2 minuten rustig hardlopen met steeds 2 minuten wandelen, en 5 minuten uitwandelen. Je horloge loopt vanzelf mee. Droog maar koud (4–6 °C) met een beetje wind; tussen 13 en 16 uur is het het minst koud. Handschoenen aan!",
     "doel": "Stap 3 bevestigen",
     "status": "gepland",
     "in_garmin": true
   },
   "vooruitblik": [
     {
-      "wanneer": "Wo",
+      "wanneer": "Do",
       "titel": "Rust of Pilates",
       "type": "rust"
     },
     {
-      "wanneer": "Do",
+      "wanneer": "Vr",
       "titel": "Stap 4: 6× 3 min hardlopen, 1,5 min wandelen (als vandaag goed gaat)",
       "type": "easy"
     },
     {
-      "wanneer": "Vr",
+      "wanneer": "Za",
       "titel": "Rust of Pilates",
       "type": "rust"
     }
@@ -187,6 +187,15 @@
     },
     {
       "datum": "2026-11-10",
+      "titel": "7× 2 min hardlopen, 2 min wandelen",
+      "type": "easy",
+      "afstand_km": null,
+      "duur_min": null,
+      "tempo": null,
+      "status": "overgeslagen"
+    },
+    {
+      "datum": "2026-11-11",
       "titel": "7× 2 min hardlopen, 2 min wandelen",
       "type": "easy",
       "afstand_km": null,
