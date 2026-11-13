@@ -1,5 +1,5 @@
 {
-  "bijgewerkt": "2026-11-12T07:15:00+01:00",
+  "bijgewerkt": "2026-11-13T07:15:00+01:00",
   "melding": "Vandaag stap 3",
   "doel": {
     "titel": "5 Engelse Mijl · Cascaderun Hoogeveen · 18 april 2027",
@@ -10,29 +10,29 @@
     "km": null
   },
   "vandaag": {
-    "datum": "2026-11-12",
+    "datum": "2026-11-13",
     "titel": "7× 2 min hardlopen, 2 min wandelen",
     "type": "easy",
-    "beschrijving": "Stap 3 nog een keer: 5 minuten inwandelen, dan 7 keer 2 minuten rustig hardlopen met steeds 2 minuten wandelen, en 5 minuten uitwandelen. Je horloge loopt vanzelf mee. Droog, 6–9 °C met wat wind; tussen 12 en 15 uur is het het fijnst.",
+    "beschrijving": "Stap 3 nog een keer: 5 minuten inwandelen, dan 7 keer 2 minuten rustig hardlopen met steeds 2 minuten wandelen, en 5 minuten uitwandelen. Je horloge loopt vanzelf mee. Droog, 8–9 °C maar met wind; na 15 uur wordt het rustiger.",
     "doel": "Stap 3 bevestigen",
     "status": "gepland",
     "in_garmin": true
   },
   "vooruitblik": [
     {
-      "wanneer": "Vr",
-      "titel": "Rust of Pilates",
-      "type": "rust"
-    },
-    {
       "wanneer": "Za",
-      "titel": "Stap 4: 6× 3 min hardlopen, 1,5 min wandelen (als vandaag goed gaat)",
-      "type": "easy"
+      "titel": "Rust of Pilates (of stap 3 als het vandaag niet lukt)",
+      "type": "rust"
     },
     {
       "wanneer": "Zo",
-      "titel": "Rust of Pilates",
+      "titel": "Rust",
       "type": "rust"
+    },
+    {
+      "wanneer": "Ma",
+      "titel": "Stap 4: 6× 3 min hardlopen, 1,5 min wandelen (als stap 3 goed gaat)",
+      "type": "easy"
     }
   ],
   "logboek": [
@@ -205,6 +205,15 @@
     },
     {
       "datum": "2026-11-12",
+      "titel": "7× 2 min hardlopen, 2 min wandelen",
+      "type": "easy",
+      "afstand_km": null,
+      "duur_min": null,
+      "tempo": null,
+      "status": "overgeslagen"
+    },
+    {
+      "datum": "2026-11-13",
       "titel": "7× 2 min hardlopen, 2 min wandelen",
       "type": "easy",
       "afstand_km": null,
