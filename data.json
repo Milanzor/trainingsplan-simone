@@ -1,6 +1,6 @@
 {
-  "bijgewerkt": "2026-11-22T07:15:00+01:00",
-  "melding": "Stap 2 gelukt! Vandaag rust, maandag stap 3",
+  "bijgewerkt": "2026-11-23T07:20:00+01:00",
+  "melding": "Vandaag stap 3: 7× 2 minuten hardlopen",
   "doel": {
     "titel": "5 Engelse Mijl · Cascaderun Hoogeveen · 18 april 2027",
     "toelichting": "8 km sterk en zonder wandelen uitlopen."
@@ -10,20 +10,15 @@
     "km": null
   },
   "vandaag": {
-    "datum": "2026-11-22",
-    "titel": "Rust of Pilates",
-    "type": "rust",
-    "beschrijving": "Gisteren heb je stap 2 helemaal uitgelopen, dus vandaag rust (nooit twee loopdagen achter elkaar). Maandag gaan we weer naar stap 3: 7 keer 2 minuten hardlopen. Het wordt droog maar koud, dus trek handschoenen aan. Het staat al op je horloge.",
-    "doel": "Herstellen",
+    "datum": "2026-11-23",
+    "titel": "Stap 3: 7× 2 min hardlopen",
+    "type": "easy",
+    "beschrijving": "5 minuten wandelen, dan 7 keer 2 minuten rustig hardlopen met 2 minuten wandelen ertussen, en 5 minuten uitwandelen. Droog en koud: tussen 12 en 15 uur is het het fijnst.",
+    "doel": "Langer achter elkaar leren lopen",
     "status": "gepland",
-    "in_garmin": false
+    "in_garmin": true
   },
   "vooruitblik": [
-    {
-      "wanneer": "Ma",
-      "titel": "Stap 3: 7× 2 min hardlopen",
-      "type": "easy"
-    },
     {
       "wanneer": "Di",
       "titel": "Rust of Pilates",
@@ -32,6 +27,16 @@
     {
       "wanneer": "Wo",
       "titel": "Stap 3 (nog een keer)",
+      "type": "easy"
+    },
+    {
+      "wanneer": "Do",
+      "titel": "Rust of Pilates",
+      "type": "rust"
+    },
+    {
+      "wanneer": "Weekend",
+      "titel": "Stap 3 of stap 4",
       "type": "easy"
     }
   ],
@@ -299,6 +304,15 @@
       "datum": "2026-11-22",
       "titel": "Rust of Pilates",
       "type": "rust",
+      "afstand_km": null,
+      "duur_min": null,
+      "tempo": null,
+      "status": "gedaan"
+    },
+    {
+      "datum": "2026-11-23",
+      "titel": "Stap 3: 7× 2 min hardlopen",
+      "type": "easy",
       "afstand_km": null,
       "duur_min": null,
       "tempo": null,
